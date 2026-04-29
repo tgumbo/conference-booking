@@ -1,9 +1,10 @@
 import type { Property } from '../types';
 
+
 export const properties: Property[] = [
   {
     id: '1',
-    propertyType: 'Condo',
+    propertyType: 'Apartment',
     address: '1250 Broadway Ave, Apt 12B',
     city: 'Manhattan',
     state: 'NY',
@@ -18,7 +19,7 @@ export const properties: Property[] = [
       'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&h=400&fit=crop',
     ],
     isFavorite: false,
-    coordinates: [40.7484, -73.9857], // Near Empire State Building
+    coordinates: [-22.57114, 17.10596], // The Windhoek Luxury Suites
   },
   {
     id: '2',
@@ -36,11 +37,11 @@ export const properties: Property[] = [
       'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&h=400&fit=crop',
     ],
     isFavorite: true,
-    coordinates: [40.6892, -73.9857], // Brooklyn Heights
+    coordinates: [-22.553350433426566, 17.09027082883621], // The Olive Exclusive All-Suite Hotel
   },
   {
     id: '3',
-    propertyType: 'House',
+    propertyType: 'Lodge',
     address: '892 Oak Street',
     city: 'Queens',
     state: 'NY',
@@ -55,11 +56,11 @@ export const properties: Property[] = [
       'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&h=400&fit=crop',
     ],
     isFavorite: false,
-    coordinates: [40.7282, -73.8317], // Forest Hills, Queens
+    coordinates: [-22.602434740610214, 17.142334353186705], //River Crossing Lodge
   },
   {
     id: '4',
-    propertyType: 'Studio',
+    propertyType: 'Hotel',
     address: '55 Water Street, Unit 5C',
     city: 'Manhattan',
     state: 'NY',
@@ -73,11 +74,11 @@ export const properties: Property[] = [
       'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&h=400&fit=crop',
     ],
     isFavorite: false,
-    coordinates: [40.7033, -74.0170], // Financial District
+    coordinates: [-22.57017911594037, 17.085704455039647], // Hilton Hotel Windhoek
   },
   {
     id: '5',
-    propertyType: 'Penthouse',
+    propertyType: 'Hotel',
     address: '100 Central Park South, PH1',
     city: 'Manhattan',
     state: 'NY',
@@ -91,16 +92,16 @@ export const properties: Property[] = [
       'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&h=400&fit=crop',
     ],
     isFavorite: false,
-    coordinates: [40.7657, -73.9760], // Central Park South
+    coordinates: [-22.567351519723033, 17.084194956679767], // Avani Hotel Windhoek
   },
   {
     id: '6',
-    propertyType: 'Townhouse',
+    propertyType: 'Hotel',
     address: '234 West 10th Street',
     city: 'Manhattan',
     state: 'NY',
     zipCode: '10014',
-    name: 'Charming West Village Townhouse',
+    name: 'The Hilton Garden Inn',
     price: 1500,
     yearBuilt: 1920,
     images: [
@@ -109,6 +110,60 @@ export const properties: Property[] = [
       'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&h=400&fit=crop',
     ],
     isFavorite: false,
-    coordinates: [40.7336, -74.0027], // West Village
+    coordinates: [-22.56966702223051, 17.085650239694715], // The Hilton Garden Inn
+  },
+  {
+    id: '7',
+    propertyType: 'Hotel',
+    address: '234 West 10th Street',
+    city: 'Manhattan',
+    state: 'NY',
+    zipCode: '10014',
+    name: 'Belvedere Boutique Hotel',
+    price: 1500,
+    yearBuilt: 1920,
+    images: [
+      'https://images.unsplash.com/photo-1560185127-6ed189bf02f4?w=600&h=400&fit=crop',
+      'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&h=400&fit=crop',
+      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&h=400&fit=crop',
+    ],
+    isFavorite: false,
+    coordinates: [-22.565713208561938, 17.11432612434974], // Belvedere Boutique Hotel
+  },
+  {
+    id: '8',
+    propertyType: 'Hotel',
+    address: '234 West 10th Street',
+    city: 'Manhattan',
+    state: 'NY',
+    zipCode: '10014',
+    name: 'Windhoek Country Club & Resort',
+    price: 1500,
+    yearBuilt: 1920,
+    images: [
+      'https://images.unsplash.com/photo-1560185127-6ed189bf02f4?w=600&h=400&fit=crop',
+      'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&h=400&fit=crop',
+      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&h=400&fit=crop',
+    ],
+    isFavorite: false,
+    coordinates: [-22.61870029258657, 17.073364414566477], // Windhoek Country Club & Resort
+  },
+  {
+    id: '9',
+    propertyType: 'Hotel',
+    address: '234 West 10th Street',
+    city: 'Manhattan',
+    state: 'NY',
+    zipCode: '10014',
+    name: 'The Weinberg Hotel',
+    price: 1500,
+    yearBuilt: 1920,
+    images: [
+      'https://images.unsplash.com/photo-1560185127-6ed189bf02f4?w=600&h=400&fit=crop',
+      'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&h=400&fit=crop',
+      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&h=400&fit=crop',
+    ],
+    isFavorite: false,
+    coordinates: [-22.576346512822063, 17.108907026203475], //The Weinberg Hotel
   },
 ];
