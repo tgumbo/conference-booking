@@ -1,17 +1,11 @@
 import * as React from 'react';
-import { cn } from '@/lib/utils';
 import { MapPin } from 'lucide-react';
-import {
-  Command,
-  CommandCheck,
-  CommandEmpty,
-  CommandGroup,
-  CommandItem,
-  CommandList,
-} from '@/components/ui/command';
+import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
+import { Command, CommandCheck, CommandEmpty, CommandGroup, CommandItem, CommandList } from '@/components/ui/command';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { topAreas } from '@/app/real-estate/mock';
+
 
 export function Area() {
   const [open, setOpen] = React.useState(false);
@@ -20,10 +14,13 @@ export function Area() {
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
-        <Button variant="outline"><MapPin className="size-3" />Where</Button>
+        <Button variant="outline">
+          <MapPin className="size-3" />
+           Location
+        </Button>
       </PopoverTrigger>
 
-      <PopoverContent  className="w-auto p-0" align="center">
+      <PopoverContent className="w-auto p-0" align="center">
         <Command>
           <CommandList>
             <CommandEmpty>No boroughs found.</CommandEmpty>
@@ -38,7 +35,12 @@ export function Area() {
                   }}
                 >
                   <span className="truncate">{area.label}</span>
-                  <CommandCheck className={cn('ms-auto', value === area.value ? 'opacity-100' : 'opacity-0')} />
+                  <CommandCheck
+                    className={cn(
+                      'ms-auto',
+                      value === area.value ? 'opacity-100' : 'opacity-0',
+                    )}
+                  />
                 </CommandItem>
               ))}
             </CommandGroup>

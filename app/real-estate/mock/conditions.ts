@@ -2,23 +2,15 @@ import type { ConditionOption } from '../types';
 
 export const conditions: ConditionOption[] = [
   {
-    value: 'New',
-    label: 'New',
+    value: 'Transfer',
+    label: 'Airport Transfer',
   },
   {
-    value: 'Used',
-    label: 'Used',
+    value: 'Shuttle',
+    label: 'Shuttle',
   },
   {
-    value: 'Renovated',
-    label: 'Renovated',
-  },
-  {
-    value: 'Foreclosure',
-    label: 'Foreclosure',
-  },
-  {
-    value: 'Short Sale',
-    label: 'Short Sale',
+    value: 'Private',
+    label: 'Private',
   },
 ];

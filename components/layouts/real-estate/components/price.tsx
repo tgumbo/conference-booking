@@ -1,12 +1,13 @@
-import { useState, useId } from 'react';
+import { useId, useState } from 'react';
 import { DollarSign } from 'lucide-react';
 import { useSliderInput } from '@/hooks/use-slider-input';
+import { Button } from '@/components/ui/button';
+import { Dialog, DialogBody, DialogClose, DialogContent, DialogFooter, DialogTrigger } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Button } from '@/components/ui/button';
 import { Slider, SliderThumb } from '@/components/ui/slider';
-import { Dialog, DialogBody, DialogClose, DialogContent, DialogFooter, DialogTrigger } from '@/components/ui/dialog';
 import { priceItems } from '@/app/real-estate/mock';
+
 
 export function Price() {
   const [open, setOpen] = useState(false);
@@ -22,7 +23,10 @@ export function Price() {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button variant="outline"><DollarSign className="size-3" />Price</Button>
+        <Button variant="outline">
+          <DollarSign className="size-3" />
+          Budget
+        </Button>
       </DialogTrigger>
 
       <DialogContent className="sm:max-w-md">
@@ -77,7 +81,9 @@ export function Price() {
               Close
             </Button>
           </DialogClose>
-          <Button variant="mono" type="submit">Apply</Button>
+          <Button variant="mono" type="submit">
+            Apply
+          </Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

@@ -20,7 +20,7 @@ export function Condition() {
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
-        <Button variant="outline"><Newspaper className="size-3" />Condition</Button>
+        <Button variant="outline"><Newspaper className="size-3" />Transport Type</Button>
       </PopoverTrigger>
 
       <PopoverContent  className="w-auto p-0" align="center">

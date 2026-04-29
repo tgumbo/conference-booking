@@ -52,7 +52,7 @@ export function Dates() {
   return (
     <Popover open={isPopoverOpen} onOpenChange={setIsPopoverOpen}>
       <PopoverTrigger asChild>
-        <Button variant="outline"><CalendarIcon className="size-3" />When</Button>
+        <Button variant="outline"><CalendarIcon className="size-3" />Event Dates</Button>
       </PopoverTrigger>
 
       <PopoverContent className="w-auto p-0" align="center">

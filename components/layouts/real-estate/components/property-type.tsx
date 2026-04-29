@@ -20,7 +20,7 @@ export function PropertyType() {
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
-        <Button variant="outline"><House className="size-3" />Type</Button>
+        <Button variant="outline"><House className="size-3" />Stay Type</Button>
       </PopoverTrigger>
 
       <PopoverContent  className="w-auto p-0" align="center">

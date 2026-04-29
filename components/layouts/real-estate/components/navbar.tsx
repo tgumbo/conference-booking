@@ -69,7 +69,7 @@ export function Navbar() {
             const Component = filter.component;
             return <Component key={filter.key} />;
           })}
-          <Button variant="mono">Save Search</Button>
+          <Button variant="mono">Save Plan</Button>
         </div>
 
         <ScrollBar orientation="horizontal" />
