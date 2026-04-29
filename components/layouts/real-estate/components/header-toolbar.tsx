@@ -13,12 +13,12 @@ export function HeaderToolbar() {
           <Search className="opacity-100" />
         </Button>
       }
-      <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground">
-        <BellDot className="opacity-100" />
-      </Button>
-      <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground">
-        <Settings className="opacity-100" />
-      </Button>
+      {/*<Button variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground">*/}
+      {/*  <BellDot className="opacity-100" />*/}
+      {/*</Button>*/}
+      {/*<Button variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground">*/}
+      {/*  <Settings className="opacity-100" />*/}
+      {/*</Button>*/}
 
       <UserDropdownMenu />
     </div>
