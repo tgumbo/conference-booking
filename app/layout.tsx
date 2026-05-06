@@ -2,14 +2,11 @@ export const runtime = 'edge';
 
 import { ReactNode, Suspense } from 'react';
 import { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import { ThemeProvider } from 'next-themes';
 import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/sonner';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import '@/styles/globals.css';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: {
@@ -28,7 +25,6 @@ export default async function RootLayout({
       <body
         className={cn(
           'antialiased flex h-full text-base text-foreground bg-background',
-          inter.className,
         )}
       >
         <ThemeProvider
