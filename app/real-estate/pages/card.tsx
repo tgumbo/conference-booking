@@ -8,7 +8,6 @@ import {
   Heart,
   MapPin,
   Share2,
-  Phone
 } from 'lucide-react';
 import {
   Select,
@@ -28,6 +27,7 @@ import {
 } from "@/components/layouts/real-estate/components/toolbar";
 import type { Property } from '@/app/real-estate/types';
 import { properties } from '@/app/real-estate/mock';
+import { PropertyDetailSheet } from '@/app/real-estate/components/property-detail-sheet';
 
 // Format price with commas
 function formatPrice(price: number): string {
@@ -168,7 +168,7 @@ function ImageCarousel({
   );
 }
 
-function PropertyCard({ property }: { property: Property }) {
+function PropertyCard({ property, onViewProperty }: { property: Property; onViewProperty: (p: Property) => void }) {
   const [isFavorite, setIsFavorite] = React.useState(property.isFavorite || false);
   const priceDisplay = `N$${formatPrice(property.price)}`;
 
@@ -210,13 +210,16 @@ function PropertyCard({ property }: { property: Property }) {
           </div>
         </div>
 
-        {/* Contact Button */}
+        {/* View Property Button */}
         <Button
           className="mx-auto w-full mt-auto"
           variant="mono"
-          onClick={(e) => e.stopPropagation()}
+          onClick={(e) => {
+            e.stopPropagation();
+            onViewProperty(property);
+          }}
         >
-         View Property
+          View Property
         </Button>
       </div>
     </div>
@@ -225,6 +228,13 @@ function PropertyCard({ property }: { property: Property }) {
 
 export function Card() {
   const [sortBy, setSortBy] = React.useState("price-asc");
+  const [selectedProperty, setSelectedProperty] = React.useState<Property | null>(null);
+  const [sheetOpen, setSheetOpen] = React.useState(false);
+
+  const handleViewProperty = (property: Property) => {
+    setSelectedProperty(property);
+    setSheetOpen(true);
+  };
 
   const sortedProperties = React.useMemo(() => {
     const sorted = [...properties];
@@ -271,9 +281,15 @@ export function Card() {
       {/* Property Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
         {sortedProperties.map((property) => (
-          <PropertyCard key={property.id} property={property} />
+          <PropertyCard key={property.id} property={property} onViewProperty={handleViewProperty} />
         ))}
       </div>
+
+      <PropertyDetailSheet
+        property={selectedProperty}
+        open={sheetOpen}
+        onOpenChange={setSheetOpen}
+      />
     </div>
   );
 }

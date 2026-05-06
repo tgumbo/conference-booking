@@ -1,3 +1,15 @@
+export interface RoomType {
+  id: string;
+  name: string;
+  description: string;
+  pricePerNight: number;
+  capacity: number;
+  bedType: string;
+  size: number;
+  amenities: string[];
+  available: boolean;
+}
+
 export interface Property {
   id: string;
   propertyType: string;
@@ -11,4 +23,9 @@ export interface Property {
   images: string[];
   isFavorite?: boolean;
   coordinates?: [number, number]; // [lat, lng] - optional for card view, required for map
+  description?: string;
+  rating?: number;
+  reviewCount?: number;
+  amenities?: string[];
+  roomTypes?: RoomType[];
 }
