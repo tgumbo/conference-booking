@@ -57,7 +57,7 @@ export function Price() {
                   value={inputValues[0]}
                   onChange={(e) => handleInputChange(e, 0)}
                   onBlur={() => validateAndUpdateValue(inputValues[0], 0)}
-                  placeholder={`$${minValue}`}
+                  placeholder={`N$${minValue}`}
                 />
               </div>
               <div className="space-y-2.5">
@@ -68,7 +68,7 @@ export function Price() {
                   value={inputValues[1]}
                   onChange={(e) => handleInputChange(e, 1)}
                   onBlur={() => validateAndUpdateValue(inputValues[1], 1)}
-                  placeholder={`$${maxValue}`}
+                  placeholder={`N$${maxValue}`}
                 />
               </div>
             </div>

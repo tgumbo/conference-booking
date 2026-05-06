@@ -170,7 +170,7 @@ function ImageCarousel({
 
 function PropertyCard({ property }: { property: Property }) {
   const [isFavorite, setIsFavorite] = React.useState(property.isFavorite || false);
-  const priceDisplay = `$${formatPrice(property.price)}`;
+  const priceDisplay = `N$${formatPrice(property.price)}`;
 
   return (
     <div className="group cursor-pointer bg-white dark:bg-zinc-950 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
@@ -216,7 +216,7 @@ function PropertyCard({ property }: { property: Property }) {
           variant="mono"
           onClick={(e) => e.stopPropagation()}
         >
-          <Phone />Contact Agent
+         View Property
         </Button>
       </div>
     </div>
@@ -247,7 +247,7 @@ export function Card() {
     <div className="flex flex-col h-full p-5">
       <Toolbar>
         <ToolbarHeading>
-          <ToolbarPageTitle>Properties in New York</ToolbarPageTitle>
+          <ToolbarPageTitle>Properties in Windhoek,NA</ToolbarPageTitle>
           <ToolbarDescription>
             {properties.length} properties found
           </ToolbarDescription>

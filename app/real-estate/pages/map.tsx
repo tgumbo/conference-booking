@@ -190,7 +190,7 @@ function createPriceMarkerIcon(
   isActive: boolean = false,
   isFavorite: boolean = false,
 ) {
-  const formattedPrice = `$ ${formatPrice(price)}`;
+  const formattedPrice = `N$ ${formatPrice(price)}`;
 
   return getLeaflet().divIcon({
     className: 'custom-price-marker',
@@ -206,7 +206,7 @@ function createPriceMarkerIcon(
         ${formattedPrice}
       </div>
     `,
-    iconSize: [60, 32],
+    iconSize: [70, 32],
     iconAnchor: [40, 32],
   });
 }
