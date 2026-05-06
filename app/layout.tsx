@@ -1,5 +1,3 @@
-export const runtime = 'edge';
-
 import { ReactNode, Suspense } from 'react';
 import { Metadata } from 'next';
 import { ThemeProvider } from 'next-themes';
@@ -8,10 +6,12 @@ import { Toaster } from '@/components/ui/sonner';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import '@/styles/globals.css';
 
+export const runtime = 'edge';
+
 export const metadata: Metadata = {
   title: {
-    template: '%s | Metronic',
-    default: 'Metronic', // a default is required when creating a template
+    template: '%s |  Desert Rose Concierge',
+    default: 'Desert Rose Concierge', // a default is required when creating a template
   },
 };
 
