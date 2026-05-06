@@ -1,6 +1,7 @@
 'use client';
 
 import * as React from 'react';
+import { useRouter } from 'next/navigation';
 import {
   Wifi,
   Car,
@@ -212,6 +213,7 @@ interface PropertyDetailSheetProps {
 }
 
 export function PropertyDetailSheet({ property, open, onOpenChange }: PropertyDetailSheetProps) {
+  const router = useRouter();
   const [selectedRoomId, setSelectedRoomId] = React.useState<string | null>(null);
 
   React.useEffect(() => {
@@ -325,7 +327,12 @@ export function PropertyDetailSheet({ property, open, onOpenChange }: PropertyDe
                   N${formatPrice(selectedRoom.pricePerNight)} / night
                 </p>
               </div>
-              <Button variant="mono" size="lg" className="shrink-0">
+              <Button
+                variant="mono"
+                size="lg"
+                className="shrink-0"
+                onClick={() => router.push('/real-estate/checkout/order-summary')}
+              >
                 Book Now
               </Button>
             </div>
