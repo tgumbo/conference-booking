@@ -1,6 +1,5 @@
 'use client';
 
-import { Fragment } from 'react';
 import Link from 'next/link';
 import { CalendarDays } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -16,25 +15,21 @@ import { OrderSummaryContent } from '@/app/real-estate/components/checkout/order
 
 export default function OrderSummaryPage() {
   return (
-    <Fragment>
+    <div className="container py-8">
       <Steps currentStep={0} />
-      <>
-        <Toolbar>
-          <ToolbarHeading>
-            <ToolbarPageTitle />
-            <ToolbarDescription>Review your booking details</ToolbarDescription>
-          </ToolbarHeading>
-          <ToolbarActions>
-            <Button variant="outline">
-              <CalendarDays />
-              <Link href="/real-estate">Browse Properties</Link>
-            </Button>
-          </ToolbarActions>
-        </Toolbar>
-      </>
-      <>
-        <OrderSummaryContent />
-      </>
-    </Fragment>
+      <Toolbar>
+        <ToolbarHeading>
+          <ToolbarPageTitle />
+          <ToolbarDescription>Review your booking details</ToolbarDescription>
+        </ToolbarHeading>
+        <ToolbarActions>
+          <Button variant="outline">
+            <CalendarDays />
+            <Link href="/real-estate">Browse Properties</Link>
+          </Button>
+        </ToolbarActions>
+      </Toolbar>
+      <OrderSummaryContent />
+    </div>
   );
 }

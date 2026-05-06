@@ -1,6 +1,5 @@
 'use client';
 
-import { Fragment } from 'react';
 import { WalletCards } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -15,25 +14,21 @@ import { PaymentMethodContent } from '@/app/real-estate/components/checkout/paym
 
 export default function PaymentPage() {
   return (
-    <Fragment>
+    <div className="container py-8">
       <Steps currentStep={2} />
-      <>
-        <Toolbar>
-          <ToolbarHeading>
-            <ToolbarPageTitle />
-            <ToolbarDescription>Select how you want to pay</ToolbarDescription>
-          </ToolbarHeading>
-          <ToolbarActions>
-            <Button variant="outline">
-              <WalletCards />
-              <span>Add Card</span>
-            </Button>
-          </ToolbarActions>
-        </Toolbar>
-      </>
-      <>
-        <PaymentMethodContent />
-      </>
-    </Fragment>
+      <Toolbar>
+        <ToolbarHeading>
+          <ToolbarPageTitle />
+          <ToolbarDescription>Select how you want to pay</ToolbarDescription>
+        </ToolbarHeading>
+        <ToolbarActions>
+          <Button variant="outline">
+            <WalletCards />
+            <span>Add Card</span>
+          </Button>
+        </ToolbarActions>
+      </Toolbar>
+      <PaymentMethodContent />
+    </div>
   );
 }

@@ -1,6 +1,5 @@
 'use client';
 
-import { Fragment } from 'react';
 import Link from 'next/link';
 import { CalendarCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -16,28 +15,24 @@ import { OrderPlacedContent } from '@/app/real-estate/components/checkout/order-
 
 export default function BookingConfirmedPage() {
   return (
-    <Fragment>
+    <div className="container py-8">
       <Steps currentStep={3} />
-      <>
-        <Toolbar>
-          <ToolbarHeading>
-            <ToolbarPageTitle />
-            <ToolbarDescription>Your booking is confirmed</ToolbarDescription>
-          </ToolbarHeading>
-          <ToolbarActions>
-            <Button variant="outline">
-              <CalendarCheck />
-              <Link href="#">My Bookings</Link>
-            </Button>
-            <Button>
-              <Link href="/real-estate">Browse Properties</Link>
-            </Button>
-          </ToolbarActions>
-        </Toolbar>
-      </>
-      <>
-        <OrderPlacedContent />
-      </>
-    </Fragment>
+      <Toolbar>
+        <ToolbarHeading>
+          <ToolbarPageTitle />
+          <ToolbarDescription>Your booking is confirmed</ToolbarDescription>
+        </ToolbarHeading>
+        <ToolbarActions>
+          <Button variant="outline">
+            <CalendarCheck />
+            <Link href="#">My Bookings</Link>
+          </Button>
+          <Button>
+            <Link href="/real-estate">Browse Properties</Link>
+          </Button>
+        </ToolbarActions>
+      </Toolbar>
+      <OrderPlacedContent />
+    </div>
   );
 }

@@ -30,7 +30,7 @@ export function Steps({ currentStep }: StepsProps) {
 
   return (
     <>
-      <div className="flex items-center justify-center flex-wrap lg:flex-nowrap gap-8 lg:gap-1.5 pt-5 mb-12">
+      <div className="flex items-center justify-center flex-wrap lg:flex-nowrap gap-8 lg:gap-1.5 mb-8">
         {steps.map((step, index) => {
           const isCompleted = index < currentStep;
           const isActive = index === currentStep;

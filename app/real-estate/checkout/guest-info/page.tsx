@@ -1,6 +1,5 @@
 'use client';
 
-import { Fragment } from 'react';
 import { UserRound } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -15,25 +14,21 @@ import { ShippingInfoContent } from '@/app/real-estate/components/checkout/shipp
 
 export default function GuestInfoPage() {
   return (
-    <Fragment>
+    <div className="container py-8">
       <Steps currentStep={1} />
-      <>
-        <Toolbar>
-          <ToolbarHeading>
-            <ToolbarPageTitle />
-            <ToolbarDescription>Enter your guest information</ToolbarDescription>
-          </ToolbarHeading>
-          <ToolbarActions>
-            <Button variant="outline">
-              <UserRound />
-              <span>Guest Details</span>
-            </Button>
-          </ToolbarActions>
-        </Toolbar>
-      </>
-      <>
-        <ShippingInfoContent />
-      </>
-    </Fragment>
+      <Toolbar>
+        <ToolbarHeading>
+          <ToolbarPageTitle />
+          <ToolbarDescription>Enter your guest information</ToolbarDescription>
+        </ToolbarHeading>
+        <ToolbarActions>
+          <Button variant="outline">
+            <UserRound />
+            <span>Guest Details</span>
+          </Button>
+        </ToolbarActions>
+      </Toolbar>
+      <ShippingInfoContent />
+    </div>
   );
 }

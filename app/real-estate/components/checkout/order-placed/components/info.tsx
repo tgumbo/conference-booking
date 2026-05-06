@@ -6,7 +6,7 @@ export function Info() {
   return (
     <Card>
       <CardHeader className="px-5 min-h-11">
-        <CardTitle className="text-sm">Delivery to</CardTitle>
+        <CardTitle className="text-sm">Guest Details</CardTitle>
       </CardHeader>
 
       <CardContent>
@@ -15,10 +15,9 @@ export function Info() {
         </div>
 
         <div className="flex flex-col gap-2 text-2sm font-normal text-mono">
-          <span>Keizersgracht 172</span>
-          <span>1016 DW, Amsterdam</span>
-          <span>Netherlands</span>
-          <span>Phone number: +31612345678</span>
+          <span>jeroen@example.com</span>
+          <span>+31 6 12 34 56 78</span>
+          <span>ID: NL-XX-123456</span>
         </div>
       </CardContent>
     </Card>

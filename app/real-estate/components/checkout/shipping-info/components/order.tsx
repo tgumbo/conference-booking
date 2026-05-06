@@ -1,5 +1,6 @@
 'use client';
 
+import { CalendarDays, MapPin, Moon } from 'lucide-react';
 import {
   Card,
   CardContent,
@@ -7,62 +8,78 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import {
-  IOrderItem,
-  IOrderItems,
-} from '@/app/real-estate/components/checkout/order-summary/components/order';
+import { Separator } from '@/components/ui/separator';
+
+const NIGHTLY_RATE = 1250;
+const NIGHTS = 5;
+const CLEANING_FEE = 150;
+const SERVICE_RATE = 0.05;
+const TAX_RATE = 0.1;
+
+const subtotal = NIGHTLY_RATE * NIGHTS;
+const serviceFee = Math.round(subtotal * SERVICE_RATE);
+const taxes = Math.round(subtotal * TAX_RATE);
+const total = subtotal + CLEANING_FEE + serviceFee + taxes;
+
+function fmt(n: number) {
+  return `N$${n.toLocaleString('en-US')}`;
+}
 
 export function Order() {
-  const items: IOrderItems = [
-    { label: 'Subtotal', amount: 492.0 },
-    { label: 'Shipping', amount: 0.0 },
-    { label: 'VAT', amount: 0.0 },
-  ];
-
-  const renderItem = (item: IOrderItem, index: number) => (
-    <div key={index} className="flex justify-between items-center px-5">
-      <span className="text-sm font-normal text-secondary-foreground">
-        {item.label}
-      </span>
-      <span className="text-sm font-medium text-mono">${item.amount}.0</span>
-    </div>
-  );
-
   return (
     <Card className="bg-accent/50">
       <CardHeader className="px-5">
-        <CardTitle>Order Summary</CardTitle>
+        <CardTitle>Booking Summary</CardTitle>
       </CardHeader>
 
-      <CardContent className="px-0 py-5 space-y-2">
-        <div className="flex flex-col px-5">
-          <span className="text-sm font-medium text-mono mb-1.5">
-            Shipping to Jeroen's Home
-          </span>
-
-          <div className="flex flex-col gap-1 text-xs font-normal text-secondary-foreground">
-            <span>Jeroen van Dijk</span>
-            <span>Keizersgracht 172</span>
-            <span>1016 DW, Amsterdam</span>
-            <span>Netherlands</span>
+      <CardContent className="px-5 py-4 space-y-4">
+        {/* Property snapshot */}
+        <div className="space-y-1">
+          <p className="text-sm font-semibold text-foreground">The Windhoek Luxury Suites</p>
+          <div className="flex items-center gap-1 text-xs text-muted-foreground">
+            <MapPin className="size-3 shrink-0" />
+            <span>Windhoek, NA</span>
           </div>
+          <p className="text-xs text-muted-foreground">Standard Suite · King · 2 guests</p>
         </div>
 
-        <div className="border-b border-border mb-4 mt-5"></div>
-        <span className="text-sm font-medium block text-mono mb-3.5 px-5">
-          Price Details
-        </span>
+        <div className="flex items-center gap-2 text-xs text-muted-foreground">
+          <CalendarDays className="size-3.5 shrink-0" />
+          <span>26 Jun → 01 Jul 2025</span>
+          <span className="flex items-center gap-0.5 ml-auto text-primary font-medium">
+            <Moon className="size-3" />
+            {NIGHTS} nights
+          </span>
+        </div>
 
-        {items.map((item, index) => {
-          return renderItem(item, index);
-        })}
+        <Separator />
+
+        {/* Price breakdown */}
+        <div className="space-y-2">
+          <div className="flex justify-between items-center">
+            <span className="text-sm text-secondary-foreground">N$1,250 × {NIGHTS} nights</span>
+            <span className="text-sm font-medium text-mono">{fmt(subtotal)}</span>
+          </div>
+          <div className="flex justify-between items-center">
+            <span className="text-sm text-secondary-foreground">Cleaning fee</span>
+            <span className="text-sm font-medium text-mono">{fmt(CLEANING_FEE)}</span>
+          </div>
+          <div className="flex justify-between items-center">
+            <span className="text-sm text-secondary-foreground">Service fee</span>
+            <span className="text-sm font-medium text-mono">{fmt(serviceFee)}</span>
+          </div>
+          <div className="flex justify-between items-center">
+            <span className="text-sm text-secondary-foreground">Taxes</span>
+            <span className="text-sm font-medium text-mono">{fmt(taxes)}</span>
+          </div>
+        </div>
       </CardContent>
 
-      <CardFooter className="flex justify-between items-center px-5">
-        <span className="text-sm font-normal text-secondary-foreground">
-          Total
-        </span>
-        <span className="text-base font-semibold text-mono">$492.00</span>
+      <Separator />
+
+      <CardFooter className="flex justify-between items-center px-5 pt-4">
+        <span className="text-sm text-secondary-foreground">Total</span>
+        <span className="text-base font-semibold text-mono">{fmt(total)}</span>
       </CardFooter>
     </Card>
   );
